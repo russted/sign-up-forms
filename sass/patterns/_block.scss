@@ -1,0 +1,99 @@
+//--------------------------------------------------------------------
+// Block
+//--------------------------------------------------------------------
+
+
+
+.block {
+  width: 100%;
+  overflow: hidden;
+  color: $white;
+
+  &--inc {
+    background: #65ba43;
+    background: -moz-linear-gradient(left, #65ba43 0%, #9ad594 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#65ba43), color-stop(100%,#9ad594));
+    background: -webkit-linear-gradient(left, #65ba43 0%,#9ad594 100%);
+    background: -o-linear-gradient(left, #65ba43 0%,#9ad594 100%);
+    background: -ms-linear-gradient(left, #65ba43 0%,#9ad594 100%);
+    background: linear-gradient(to right, #65ba43 0%,#9ad594 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#65ba43', endColorstr='#9ad594',GradientType=1 );
+  }
+  &--fastco {
+    background: #95d5ca;
+    background: -moz-linear-gradient(left,  #95d5ca 0%, #32beab 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%,#95d5ca), color-stop(100%,#32beab));
+    background: -webkit-linear-gradient(left,  #95d5ca 0%,#32beab 100%);
+    background: -o-linear-gradient(left,  #95d5ca 0%,#32beab 100%);
+    background: -ms-linear-gradient(left,  #95d5ca 0%,#32beab 100%);
+    background: linear-gradient(to right,  #95d5ca 0%,#32beab 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95d5ca', endColorstr='#32beab',GradientType=1 );
+  }
+
+  &-carousel {
+    .container {
+      position: relative;
+    }
+  }
+
+  &.bg--white + &.bg--white {
+    border-top: solid 1px $almost_white;
+  }
+}
+
+.bg {
+    &--warmblue {
+        background-color: $inkling_warmblue;
+    }
+    &--coolblue {
+        background-color: $inkling_coolblue;
+        color: $white;
+    }
+    &--teal {
+        background-color: $inkling_teal;
+    }
+    &--viridian {
+        background-color: $inkling_viridian;
+    }
+    &--coolgreen {
+        background-color: $inkling_coolgreen;
+    }
+    &--leafgreen {
+        background-color: $inkling_leafgreen;
+    }
+    &--yellowgreen {
+        background-color: $inkling_yellowgreen;
+    }
+    &--lightblue {
+        background-color: $inkling_lightblue;
+        color: $text_color;
+    }
+    &--white {
+        background-color: $white;
+        color: $text_color;
+    }
+    &--gray {
+        background-color: $almost_white;
+        color: $text_color;
+    }
+    &--coal {
+        background-color: $coal;
+    }
+    &--silver {
+        background-color: $silver;
+    }
+    &--orange {
+        background-color: $inkling_orange;
+    }
+    &--careers {
+      background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/illustration-map.svg') center center no-repeat;
+      background-position: bottom;
+      background-repeat: repeat-x;
+      background-color: $inkling_warmblue;
+      .content {
+        padding-bottom: 250px;
+      }
+
+
+    }
+}

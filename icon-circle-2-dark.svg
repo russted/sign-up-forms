@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="60px" height="60px" viewBox="0 0 60 60" enable-background="new 0 0 60 60" xml:space="preserve">
+<g>
+	<g>
+		<rect x="16" y="18.5" fill="none" width="28" height="23"/>
+		<text transform="matrix(1 0 0 1 22.049 40.3857)" fill="#474747" font-family="'SourceSansPro-Semibold'" font-size="31">2</text>
+	</g>
+	<circle fill="none" stroke="#474747" stroke-miterlimit="10" cx="30" cy="30" r="25"/>
+</g>
+<g>
+	<rect x="245.6" y="102" fill="none" width="28" height="23"/>
+	<text transform="matrix(1 0 0 1 251.6173 123.8857)" fill="#EAEAEA" font-family="'SourceSansPro-Semibold'" font-size="31">2</text>
+	<circle fill="none" stroke="#EAEAEA" stroke-miterlimit="10" cx="259.6" cy="113.5" r="25"/>
+</g>
+<g>
+	<g>
+		<rect x="653" y="102" fill="none" width="28" height="23"/>
+		<text transform="matrix(1 0 0 1 659.049 123.8857)" fill="#EAEAEA" font-family="'SourceSansPro-Semibold'" font-size="31">3</text>
+	</g>
+	<circle fill="none" stroke="#EAEAEA" stroke-miterlimit="10" cx="667" cy="113.5" r="25"/>
+</g>
+</svg>

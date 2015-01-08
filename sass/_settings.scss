@@ -1,0 +1,126 @@
+//--------------------------------------------------------------------
+// Settings
+//--------------------------------------------------------------------
+//--------------------------------------------------------------------
+// Font family stacks
+//--------------------------------------------------------------------
+$font_sans_serif:               "Source Sans Pro", Verdana, Helvetica, sans;
+
+$body_font_family:              $font_sans_serif;
+$heading_font_family:           $font_sans_serif;
+
+//--------------------------------------------------------------------
+// Font sizes
+// 
+// The following varaibles must be defined in pixels, and will
+// be automatically converted to ems.
+//--------------------------------------------------------------------
+
+// The base variables affect main content.
+$base_font_size:                22px;
+$base_font_size_small:          17px;
+
+// Line height (leading)
+$base_line_height:              30px;
+$base_line_height_small:        27px;
+
+// Heading font sizes
+$font_size1:                    50px;
+$font_size2:                    40px;
+$font_size3:                    35px;
+$font_size4:                    31px;
+$font_size5:                    26px;
+$font_size6:                    22px;
+$font_size7:                    19px;
+$font_size8:                    17px;
+$font_size9:                    16px;
+
+$font_size_small:               80%;
+
+
+$padding_width:                 $base_line_height;
+$indent_unit:                   $base_line_height;
+
+//--------------------------------------------------------------------
+// Spacing Unit
+// Used to create consistent padding across webpage
+//--------------------------------------------------------------------
+
+$spacing_unit_small:			25px;
+$spacing_unit_medium:			50px;
+$spacing_unit_large:			100px;
+
+
+//--------------------------------------------------------------------
+// Colors
+//--------------------------------------------------------------------
+
+// Inkling brand colors
+$inkling_warmblue:              #007db6;
+$inkling_coolblue:              #0091b2;
+$inkling_teal:                  #009c9e;
+$inkling_viridian:              #00a77e;
+$inkling_coolgreen:             #22b24c;
+$inkling_leafgreen:             #60b031;
+$inkling_yellowgreen:           #a5b62e;
+$inkling_lightblue:				#e5f4f7;
+$inkling_orange:				#f9ad18;
+        
+// Greyscale:       
+$white:                         #ffffff;
+$almost_white:                  #e9e9e9;
+$light_grey:                    #bbbbbb;
+$mid_grey:                      #999999;
+$dark_grey:                     #676767;
+$almost_black:                  #333333;
+$black:                         #000000;
+$coal:							#474747;
+$silver:						#878787;
+
+$background_color:              $white;
+
+$link_color:                    $inkling_coolblue;
+
+$text_color:                    $coal;
+$text_color_light:              $silver;
+
+//--------------------------------------------------------------------
+// Breakpoints and margins
+//--------------------------------------------------------------------
+// Breapoints
+// By default, breakpoints assume min-width. So the breakpoint value should
+// be the smallest point at which the styles should take effect.
+$bp_small:                     	320px;
+$bp_medium:                     568px;
+$bp_large:                      768px;
+$bp_xlarge:                     960px;
+$bp_xxlarge:                    1280px;
+$bp_xxxlarge:                   1366px;
+
+
+// Content Margins
+// The margins on the main content.
+$content_margin_small:          $spacing_unit_small;
+$content_margin_medium:         $spacing_unit_medium;
+$content_margin_large:          $spacing_unit_large;
+
+$top_margin_small:              $spacing_unit_small;
+$top_margin_medium:             $spacing_unit_medium;
+$top_margin_large:              $spacing_unit_large;
+
+$bottom_margin_small:           $spacing_unit_small;
+$bottom_margin_medium:          $spacing_unit_medium;
+$bottom_margin_large:           $spacing_unit_large;
+
+
+//--------------------------------------------------------------------
+// Z-Index Scales
+//--------------------------------------------------------------------
+
+// z-index variables for consistent scaling
+
+$z_index_1:						100;
+$z_index_2:						200;
+$z_index_3:						300;
+
+

@@ -1,0 +1,260 @@
+//--------------------------------------------------------------------
+// Images
+//--------------------------------------------------------------------
+
+/*  Images should always span 100% if their container */
+img {
+    width: 100%;
+    display: inline-block;
+}
+
+/*--------------------------------------------------------------------
+ * Images Padding Top
+ * If an image follows an h1 and h3 add padding top
+ *------------------------------------------------------------------*/
+
+h1 + img, h3 + img  {
+	padding-top: $spacing_unit_small;
+	@include respond($bp_medium){
+		padding-top: $spacing_unit_medium;
+	}
+}
+
+p + .image {
+    &--medium {
+        padding-top: $spacing_unit_small;
+        @include respond($bp_medium) {
+            padding-top: $spacing_unit_medium;
+        }
+    }
+
+    &--large {
+        padding-top: $spacing_unit_small;
+        @include respond($bp_medium) {
+            padding-top: $spacing_unit_medium;
+        }
+    }
+}
+
+.image {
+    &--medium {
+        max-width: 600px;
+        @include one-half;
+        padding-top: $spacing_unit_small;
+        @include respond($bp_medium) {
+        padding-top: $spacing_unit_medium;
+        }
+
+    }
+    &--large {
+        width: 100%;
+        @include center;
+        @include respond($bp_medium){
+            width: percentage(3/4);
+        }   
+        + .grid:not(.overlap) {
+            padding-top: $spacing_unit_small;
+            @include respond($bp_medium) {
+                padding-top: $spacing_unit_medium;
+            }
+        }
+        
+        &.js-swap {
+            display: none;
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+    &--vertical { // Used when images are too tall
+       width: 60%; 
+    }
+}
+
+.logo { // Used for logos
+    &--medium {
+        height: 60px;
+        max-width: 150px;
+        @include center;
+
+    }
+    &--large {
+        height: 90px;
+        @include center;
+    }
+
+}
+.logo--medium, .logo--large {
+    + p {
+        padding-top: $spacing_unit_small/2;
+        @include respond($bp_medium) {
+          padding-top: $spacing_unit_small;  
+        }
+    }
+}
+
+/*--------------------------------------------------------------------
+ * Image Grid used on Careers Page
+ *------------------------------------------------------------------*/
+  .caption-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include respond ($bp_large) {
+        &:after {
+                content: "";
+                position: absolute;
+                top: 100%;
+                left: $spacing_unit_small;
+                border-top: 15px solid;
+                border-left: $spacing_unit_small/2 solid transparent;
+                border-right: $spacing_unit_small/2 solid transparent;   
+        }
+    }
+ }
+
+   .caption-bottom { 
+    position: absolute;
+    left: 0;
+    bottom: 7px;
+    @include respond ($bp_large) {
+    width: 100%;
+    position: absolute;
+    &:after {
+            content: "";
+            position: absolute;
+            bottom: 100%;
+            left: $spacing_unit_small;
+            border-bottom: 15px solid;
+            border-left: $spacing_unit_small/2 solid transparent;
+            border-right: $spacing_unit_small/2 solid transparent;   
+        }
+    }
+ }
+ .caption-full {
+    width: 100%;
+ }
+ .caption-half {
+    width: 100%;
+    @include respond ($bp_xlarge) {
+        width: 50%;
+    }
+ }
+
+ .img-grid {
+    position: relative;
+    float: left;
+    &:nth-child(1) { // Controls each caption and photo by their postion in the markup
+        width: 100%;
+        margin-bottom: 3%;
+        @include respond($bp_large) {
+            width: 62%;
+            margin-right: 5%;
+        }  
+    }
+    &:nth-child(2) {
+        @include one-half;
+        margin-right: 4%;
+        @include respond($bp_large) {
+            @include one-third;
+            margin-right: 0;
+        } 
+    }
+    &:nth-child(3) {
+        @include one-half;
+        margin-bottom: 3%;
+        margin-right: 0;
+        @include respond($bp_large) {
+            @include one-third;
+            margin-right: 5%;
+            margin-bottom: 0;
+        }  
+    }
+    &:nth-child(4) {
+        width: 100%;
+        @include respond($bp_large) {
+            width: 62%;
+        } 
+    }
+ }
+ .img-grid--caption {
+    color: $white;
+    padding: $spacing_unit_small/2;
+    @include respond($bp_medium) {
+      padding: $spacing_unit_small;  
+    }
+    p {
+        @include respond($bp_medium) {
+        font-size: $font_size7;
+        line-height: 29px;
+        }
+    }
+
+    &--warmblue {
+        background-color: rgba($inkling_warmblue, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_warmblue, 0.9);
+            border-bottom-color: rgba($inkling_warmblue, 0.9);
+        }
+
+    }
+    &--white {
+        background-color: rgba($white, 0.9);
+        p {
+            color: $text_color;
+        }
+        &:after {
+            border-top-color: rgba($white, 0.9);
+            border-bottom-color: rgba($white, 0.9);
+        }
+
+    }
+    &--viridian {
+        background-color: rgba($inkling_viridian, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_viridian, 0.9);
+            border-bottom-color: rgba($inkling_viridian, 0.9);
+        }
+    }
+
+    &--leafgreen {
+        background-color: rgba($inkling_leafgreen, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_leafgreen, 0.9);
+            border-bottom-color: rgba($inkling_leafgreen, 0.9);
+        }
+        
+    }
+
+    &--yellowgreen {
+        background-color: rgba($inkling_yellowgreen, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_yellowgreen, 0.9);
+            border-bottom-color: rgba($inkling_yellowgreen, 0.9);
+
+        }
+    }
+    &--coolgreen {
+        background-color: rgba($inkling_coolgreen, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_coolgreen, 0.9);
+            border-bottom-color: rgba($inkling_coolgreen, 0.9);
+        }
+    }
+    &--coolblue {
+        background-color: rgba($inkling_coolblue, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_coolblue, 0.9);
+            border-bottom-color: rgba($inkling_coolblue, 0.9);
+        }
+    }
+    &--teal {
+        background-color: rgba($inkling_teal, 0.9);
+        &:after {
+            border-top-color: rgba($inkling_teal, 0.9);
+            border-bottom-color: rgba($inkling_teal, 0.9);
+        }
+    }
+
+ }

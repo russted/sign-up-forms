@@ -1,0 +1,237 @@
+/*--------------------------------------------------------------------
+ * Form Elements
+ *------------------------------------------------------------------*/
+button,
+fieldset,
+input,
+optgroup,
+select,
+textarea {
+    /* Correct inproperly inherited font sizes/styles */
+    font: inherit;
+    /* Remove focus outline */
+    &:focus {
+        outline: 0;
+    }
+}
+
+/*--------------------------------------------------------------------
+ * Buttons
+ *------------------------------------------------------------------*/
+button,
+html input[type="button"], /* 1 */
+input[type="reset"],
+input[type="submit"] {
+  /* Address `overflow` set to `hidden` in IE 9/10/11. */
+  overflow: visible;
+  /* Correct inability to style clickable `input` types in iOS. */
+  -webkit-appearance: button;
+  /*  Improve usability and consistency of cursor style between image-type `input` and others. */
+  cursor: pointer;
+  background: $inkling_warmblue;
+  color: $white;
+  font-weight: 300;
+  -webkit-font-smoothing: antialiased;
+  border: 0px none;
+  padding: $indent_unit/4 $indent_unit/2;
+  &:hover {
+  }
+}
+
+/* Re-set default cursor for disabled elements. */
+button[disabled],
+html input[disabled] {
+  cursor: default;
+}
+
+
+/*--------------------------------------------------------------------
+ * Labels (used as containers for input elements)
+ *
+ * <lable>[input field]</label>
+ *------------------------------------------------------------------*/
+label {
+    display: block;
+    clear: both;
+    margin: 0 auto;
+    width: 80%;
+    padding-top: $spacing_unit_small;
+    // Add vertical rhythm
+    // margin-bottom: $base_line_height*0.5;
+}
+
+/*--------------------------------------------------------------------
+ * Text field
+ *------------------------------------------------------------------*/
+input[type="text"],
+input[type="url"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+select,
+textarea{
+    display: block;
+    line-height: normal;
+    border: 1px solid $almost_white;
+    @include prefix(border-radius, 2px);
+    margin-top: $spacing_unit_small/2;
+    padding: $spacing_unit_small/6;
+    font-weight: 300;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    @include transition(border 0.3s ease);
+    &:focus {
+      @include transition(border 0.3s ease);
+      border: 1px solid $inkling_warmblue;
+    }
+    @include respond($bp_medium) {
+      width: 80%;
+
+    }
+    @include respond($bp_large + 100) {
+      margin-left: 0;
+    }
+}
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    background-color: $white;
+    border: 1px solid $almost_white;
+    margin-top: $spacing_unit_small/2;
+    padding: $spacing_unit_small/2;
+    @include prefix(border-radius, 2px);
+    display: inline-block;
+    position: relative; 
+    margin-right: 10px;
+    @include transform(translateY(25%)); // centers checkbox and text
+    @include transition(border 0.3s ease);
+    @include respond($bp_medium) {
+      margin-left: 10%;
+    }
+    @include respond($bp_large + 100) {
+      margin-left: 0;
+    }
+    &:active, &:checked:active {
+      @include transition(border 0.3s ease);
+      border: 1px solid $inkling_warmblue;
+    }
+    &:checked:after {
+    content: '\2714';
+    font-size: $font_size8;
+    font-weight: 300;
+    position: absolute;
+    top: -4px;
+    left: 6px;
+    color: $link_color;
+    }
+    + label {
+      display: inline-block;
+      font-size: $font_size8;
+    }
+}
+
+/*--------------------------------------------------------------------
+ * Text area
+ *------------------------------------------------------------------*/
+textarea {
+    display: block;
+    overflow: auto; /* Remove scrollbars in IE */
+    width: 100%;
+    border: 1px solid $text_color;
+    @include prefix(border-radius, 2px);
+    padding: $indent_unit/4;
+    outline: none;
+    resize: none;
+     &:focus {
+      border: 1px solid $inkling_warmblue;
+    }
+}
+
+
+::-webkit-input-placeholder {
+   font-size: $font_size8;
+   padding-left: $spacing_unit_small/3;
+   @include respond($bp_medium) {
+      padding-top:2px;
+   }
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   font-size: $font_size8; 
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   font-size: $font_size8;  
+}
+
+:-ms-input-placeholder {  
+   font-size: $font_size8;
+}
+/*--------------------------------------------------------------------
+ * Styling for request demo forms and pages 
+ *------------------------------------------------------------------*/
+.sign-up__form {
+  width: 100%;
+  max-width: 500px;
+  margin-left: 0;
+  @include center;
+  @include prefix(border-radius, 4px);
+  @include respond($bp_large + 100) {
+    @include one-half;
+    @include right;
+  }
+
+  .btn {
+    @include respond($bp_medium) {
+      margin-left: 10%;
+    }
+    @include respond($bp_large + 100) {
+      margin-left: 0;
+    }
+    margin-bottom: $spacing_unit_small;
+      @include respond($bp_medium) {
+        margin-bottom: $spacing_unit_medium;
+      }
+  }
+
+  h2 {
+    text-align: center;
+    @include respond($bp_large + 100) {
+        text-align: left;
+    }
+  }
+  &--background {
+    background-color: $white;
+    h2 {
+      @extend .text--warmblue;
+      @include text-center;
+      padding-top: $spacing_unit_small;
+      padding-left: $spacing_unit_small;
+      padding-right: $spacing_unit_small;
+      + p {
+        @extend .text--warmblue;
+      }
+    }
+  }
+}
+.sign-up__text {
+  width: 100%;
+  @include respond($bp_large + 100) {
+    @include one-half;
+    @include left;
+    margin-right: 0;
+  }
+}
+
+.sign-up__info {
+  border-top: 1px solid $text-color;
+  margin-top: $spacing_unit_small;
+  padding-top: $spacing_unit_small;
+    @include respond($bp_large + 100) {
+      padding-top: $spacing_unit_medium;
+    }
+}

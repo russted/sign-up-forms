@@ -1,0 +1,238 @@
+
+// Grid Stylings by @adizpezio http://codepen.io/adispezio/pen/oaEFz
+
+//  Container is used for holding the content divs. 
+// This is also used to center the content since the surrounding 
+// .block needs to extend to the edge of the page. 
+.container {
+    max-width:$bp_xxxlarge;
+    margin:0 auto;
+    padding: $spacing_unit_small;
+    @include respond($bp_medium) { 
+        padding: $spacing_unit_medium; 
+    }
+    @include respond($bp_xxlarge) { 
+        padding: $spacing_unit_large; 
+    }
+
+    &-compact {
+      @include respond($bp_xxlarge) { 
+        padding: $spacing_unit_medium; 
+      }
+    }
+}
+
+//  All content should be put in a .content div. 
+// If you add a grid, put it in its own .content div. 
+// A .block can have multiple .content divs. 
+
+.content {
+    @include clearfix;
+    + .content {
+      padding-top: $spacing_unit_small;
+      @include respond($bp_medium) {
+        padding-top: $spacing_unit_medium;
+      }
+    }
+}
+
+
+ // Clearfix for grid 
+.grid {
+  @include clearfix;
+  @include clearboth;
+  + .grid { // if a grid follows a grid add padding top
+    padding-top: $spacing_unit_small;
+      @include respond($bp_large) {
+        padding-top: $spacing_unit_medium;
+      }
+  }
+
+
+  // Text styles within grid
+  p {
+    font-size: $font_size8;
+    line-height: $base_line_height_small;
+    text-align: center;
+      @include respond($bp_medium) {
+        font-size: $font_size7;
+        line-height: 1.5;
+      }
+  }
+  h3 {
+    @include respond($bp_medium) {
+        font-size: $font_size7;
+    }
+  }
+  h3 + p {
+      padding-top: $spacing_unit_small/2;
+  }
+  hr {
+    @include center;
+  }
+  
+  &.full-bleed {
+    margin: 50px -100% 0;
+    padding: 0 100%;
+    padding-bottom: $spacing_unit_small;
+      @include respond($bp_large) {
+        padding-bottom: $spacing_unit_large;
+      }
+  }
+
+  &.overlap {
+    padding: 170px 100% 0px;
+    margin-top: -125px;
+    padding-bottom: $spacing_unit_small;
+      @include respond($bp_large) {
+        padding-bottom: $spacing_unit_large;
+      }
+  }
+}
+.grid 
+  // Icon styles within grid
+  .icon--medium, .icon--large {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    + h3 {
+      padding-top: $spacing_unit_small;
+    }
+  }
+
+h1 + .grid, h3 + .grid, h2 + .grid, p + .grid  { // if a heading element follows a grid add padding top
+  padding-top: $spacing_unit_small;
+      @include respond($bp_medium) {
+        padding-top: $spacing_unit_medium;
+      }
+}
+
+.icon--medium + h3 {
+  padding-top: $spacing_unit_small;
+}
+
+.icon--large + h3 {
+  padding-top: $spacing_unit_small;
+}
+
+.grid--left-align { // if you need all items within a grid to align left
+  h1, h2, h3, p {
+    text-align: left;
+  }
+  img {
+    margin-left: 0;
+  }
+}
+
+
+//  If a content div is also a grid, use
+// .padded to put space between the grid items. 
+// .padded also compensates for the extra item 
+// padding by reducing the .content padding.
+// Only used to exend padded should not be used as individual class 
+.padded { 
+    @include respond($bp_medium) {
+        padding: 0 $spacing_unit_small/2;
+    }
+
+  .item {
+    @include respond($bp_medium) {
+        margin-right: $spacing_unit_small/2; // changed from padding to margin
+        margin-left: $spacing_unit_small/2;
+    }
+  }
+}
+
+// Simple container to add padding and float
+// the content. DO NOT put other classes on .item except widths. 
+.item {
+  width: 100%;
+  @include respond($bp_medium) {
+    float: left;
+  }
+}
+
+.js-height {
+// Grid element that contains content.
+// The JS uses this element to size the height of each grid item 
+// No direct styles should be applied to js-height 
+}
+
+.grid--half {
+  @extend .padded;
+  .item {
+    &:nth-child(1) {
+      margin-top: $spacing_unit_small;
+    }
+    &:nth-child(2) {
+      margin-top: $spacing_unit_small;
+    }
+    &:nth-child(3) {
+      margin-top: $spacing_unit_small;
+    }
+    &:nth-child(4) {
+      margin-top: $spacing_unit_small;
+    }
+    @include respond($bp_large + 100){
+    width: percentage(1/2) - 5;
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    &:nth-child(2) {
+      margin-top: 0;
+    }
+    }
+  }
+}
+
+
+// Used for all Grids with Three items in them
+.grid--third {
+  @extend .padded;
+  @include respond ($bp_large) { // Add flexbox height at bp_large
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    margin-top: $spacing_unit_small;
+    @include respond($bp_large){
+    width: percentage(1/3);
+    margin-top: 0;
+    }
+  }
+}
+
+.grid--fourth {
+  @extend .padded;
+  @include respond ($bp_large) { // Add flexbox height at bp_xlarge
+    display: flex;
+    justify-content: space-between;
+  }
+  .item {
+    &:nth-child(1) {
+      margin-top: 0;
+    }
+    margin-top: $spacing_unit_small;
+    
+      @include respond($bp_large){
+      width: 46%;
+        &:nth-child(2) {
+          margin-top: 0; // Zero's out margin top for the second element at bp_large
+        }
+      }
+
+      @include respond($bp_xlarge)  {
+        width: percentage(1/4);
+          &:nth-child(3) {
+            margin-top: 0;
+          }
+          &:nth-child(4) {
+            margin-top: 0;
+          }
+      }
+    }
+  }
+

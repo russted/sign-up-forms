@@ -1,0 +1,137 @@
+.grid-resource {
+  .item {
+    margin-top: 50px!important;
+  }
+   + & {
+    margin-top: 50px;
+   }
+}
+
+.searchandfilter {
+  @include clearfix;
+}
+
+.searchandfilter ul li.sf-field-category {
+  padding-left: $spacing_unit_small;
+}
+
+.searchandfilter select, .postform, .searchandfilter input[type="text"] {
+  border-radius: 3px;
+  width: 20%;
+  margin-right: $spacing_unit_small;
+  float: left;
+  border: 1px solid #c8c8c8;
+  background-color: #fff;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 500;
+  color: #848484;
+  font-family: 'Source Sans Pro', Helvetica;
+}
+
+
+ .searchandfilter input[type="text"] {
+  margin-right: 20px;
+  padding-left: 8px;
+  width: 100%;
+ }
+
+.searchandfilter input[type="submit"] {
+  //padding: 2px 15px;
+  font-size: 15px;
+  border-radius: 3px;
+  @extend .btn;
+  @extend .btn--green;
+  @include transition(background 0.3s ease);
+  &:hover {
+    @include transition(background 0.3s ease);
+  }
+}
+
+.searchandfilter ul li {
+  float: left;
+}
+
+.pagi-num {
+  display: block;
+  float: left;
+  width: 35px;
+  height: 35px;
+  background-color: #a7a7a7;
+  border-radius: 2px;
+  text-align: center;
+  font: 700 21px/35px "Source Sans Pro","Lucida Grande",Helvetica,Verdana;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-top: $spacing_unit_small;
+  &:hover {
+    background-color: #666666;
+  }
+  &.sf-active {
+    background-color: #666666;
+  }
+}
+
+
+.pagi-prev {
+  display: block;
+  float: left;
+  width: 35px;
+  height: 35px;
+  background-color: #a7a7a7;
+  border-radius: 2px;
+  text-align: center;
+  font: 700 21px/35px "Source Sans Pro","Lucida Grande",Helvetica,Verdana;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-top: $spacing_unit_small;
+  text-indent: -9999px;
+  background: #a7a7a7 url('https://inklingstatic.a.ssl.fastly.net/inkling_com/ui/pagination_prev.png') center center no-repeat;
+  &.sf-active {
+    background-color: #666666;
+  }
+  &.sf-disabled {
+    opacity: 1;
+  }
+  &:hover {
+    background-color: #666666;
+  }
+}
+
+.pagi-next {
+  display: block;
+  float: left;
+  width: 35px;
+  height: 35px;
+  background-color: #a7a7a7;
+  border-radius: 2px;
+  text-align: center;
+  font: 700 21px/35px "Source Sans Pro","Lucida Grande",Helvetica,Verdana;
+  color: white;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  margin-top: $spacing_unit_small;
+  text-indent: -9999px;
+  background: #a7a7a7 url('https://inklingstatic.a.ssl.fastly.net/inkling_com/ui/pagination_next.png') center center no-repeat;
+  &.sf-active {
+    background-color: #666666;
+  }
+  &.sf-disabled {
+    opacity: 1;
+  }
+  &:hover {
+    background-color: #666666;
+  }
+}
+
+
+/*.resource-search {
+  background: url(http://i.imgur.com/OR1xMVf.png) no-repeat scroll left center white !important;
+  background-position: -0px center; 
+  padding-left: 25px !important;
+}*/

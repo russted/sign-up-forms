@@ -1,0 +1,196 @@
+/*--------------------------------------------------------------------
+ * Layout Classes 
+ *
+ * The following classes handle width and alignment.
+ * WARNING: Editing these classes may cause unintended effects.
+ *------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+ * Width
+ *----------------------------------------------------------------*/
+ .width-whole,
+.one-whole { 
+    width: 100%; 
+    @include clearboth;
+}
+
+.one-half { 
+    width: 100%;
+    @include respond($bp_medium) {
+        width: percentage(1/2);
+    }  
+}
+
+// Thirds
+.one-third { 
+    width: 100%;
+    @include respond($bp_medium) {
+        width: percentage(1/3);
+    }
+}
+
+.two-thirds { 
+    width: 100%;
+    @include respond($bp_medium) {
+        width: percentage(2/3);
+    }
+
+}
+
+// Fourths
+.one-fourth { 
+    width: 100%;
+        @include respond($bp_medium) {
+            width: percentage(1/2);
+        }
+        @include respond($bp_xlarge) {
+            width: percentage(1/4);
+        }
+ }
+
+.two-fourths { 
+    width: 100%;
+        @include respond($bp_medium) {
+            width: percentage(2/4);
+        }
+ }
+
+
+.three-fourths { 
+    width: 100%;
+        @include respond($bp_medium) {
+            width: percentage(3/4);
+        }
+}
+
+// On mobile devices, all fractional widths should span 100% of the body.
+.fractional-width {
+    @include width-full-mobile;
+}
+
+/*------------------------------------------------------------------
+ * Alignment
+ *----------------------------------------------------------------*/
+ 
+// Left alignment for elements outside the grid.
+.left {
+    @include left;
+}
+
+// Righ alignment for elements outside the grid.
+.right {
+    @include right;
+}
+
+// Center alignment for elements outside the grid.
+.center {
+    @include center;
+}
+
+/*------------------------------------------------------------------
+ * Left and Right double-up
+ *----------------------------------------------------------------*/
+.left + .right {
+    margin-left: 0;
+}
+
+.right + .left {
+    margin-right: 0;
+}
+
+
+/*--------------------------------------------------------------------
+ * Media Blocks
+ * Useful in patterns that require image and text
+ * Directional classes like .left & .right help postion content 
+ * Width classes like .one-half help size content correctly
+ * Example: <div class=".media__text right one-half">
+ *------------------------------------------------------------------*/
+
+.media-left {
+    .media__image {
+        @include clearfix;
+        @include width-full-mobile;
+        margin: 0 auto;
+        text-align: center;
+        @include respond($bp_xlarge){ /*Reduces the two colums from getting too skinny*/
+            @include one-half;
+            @include left;
+            margin-right: 0;
+        }
+
+    }
+    .media__text {
+        @include clearfix;
+        @include width-full-mobile;
+        margin: 0 auto;
+        @include respond($bp_xlarge){ /*Reduces the two colums from getting too skinny*/
+            @include one-half;
+            @include right;
+            margin-left: 0;
+        }
+        h2 {
+            @include respond($bp_xxlarge) {
+                max-width: 75%;
+            }
+        }
+    }
+}
+
+.media-right {
+
+    .media__image {
+        @include clearfix;
+        @include width-full-mobile;
+        margin: 0 auto;
+        text-align: center;
+        @include respond($bp_xlarge){ /*Reduces the two colums from getting too skinny*/
+            @include one-half;
+            @include right;
+            margin-left: 0;
+        }
+
+    }
+    .media__text {
+        @include clearfix;
+        @include width-full-mobile;
+        margin: 0 auto;
+        @include respond($bp_xlarge){ /*Reduces the two colums from getting too skinny*/
+            @include one-half;
+            @include left;
+            margin-right: 0;
+        }
+        h2 {
+            @include respond($bp_xxlarge) {
+                max-width: 75%;
+            }
+        }
+    }
+}
+
+.media-right, .media-left {
+    @include respond($bp_xlarge){
+      height: 350px; // needs a set height to vertically align
+    }
+}
+.media__text {
+    
+    h2 {
+        padding-top: $spacing_unit_small;
+        @include respond($bp_xlarge){
+        padding-top: 0;
+        }
+    }
+    @include respond($bp_xlarge){
+        @include vertically-align;   
+    }
+
+}
+
+.media__image {
+    max-width: 600px;
+    @include respond($bp_xlarge){
+        @include vertically-align;   
+    }
+
+}

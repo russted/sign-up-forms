@@ -1,0 +1,27 @@
+//--------------------------------------------------------------------
+// Lists
+//--------------------------------------------------------------------
+
+
+h2 + .list-bullet {
+    padding-top: $spacing_unit_small;
+}
+
+.list-bullet {
+    list-style-position: inside;
+    margin-left: $spacing_unit_small/2;
+        @include respond($bp_medium) {
+            margin-left: $spacing_unit_small;
+        }
+    li {
+        font-weight: 300;
+        text-indent: -1em;
+        margin-top: $spacing_unit_small/4;
+            @include respond($bp_medium) {
+                margin-top: $spacing_unit_small/2;
+            }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+}

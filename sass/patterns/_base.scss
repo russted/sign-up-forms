@@ -1,0 +1,32 @@
+/*------------------------------------------------------------------
+ * Base page styles
+ *
+ * WARNING: Editing these styles may cause unintended effects.
+ *----------------------------------------------------------------*/
+
+ /* Set the base font sizes for small and larger screens */
+html {
+    font-size: $base_font_size_small;
+    line-height: $base_line_height_small;
+    @include respond($bp_medium) {
+        font-size: $base_font_size;
+         line-height: $base_line_height;
+    }
+}
+
+/* Set the base properties */
+body {
+    @include clearfix;
+    @include clearboth;
+    display: block;
+    font-family: $body_font_family;
+    font-weight: 400;
+    color: $text_color;
+    background: $white;
+    counter-reset: u-num;
+    max-width: 2560px;
+    margin: 0 auto;
+}
+
+
+

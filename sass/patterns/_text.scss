@@ -1,0 +1,270 @@
+/*------------------------------------------------------------------
+ * Font Smoothing
+ *----------------------------------------------------------------*/
+
+// Add enhanced anti-aliasing for all text...
+body {
+    @include prefix(font-smoothing, antialiased);
+}
+
+// Except for paragraph text on mobile (to increase speed).
+// I'm going to comment this out -  DW 10/13/2014
+// @include respond-max-width($bp_medium) {
+//     body p {
+//         @include prefix(font-smoothing, initial);
+//     }
+// }
+
+// Add kerning and ligatures to a small set of elements when available.
+// Do not add to the body or large blocks of text for performance reasons.
+h1, h2, h3, h4, h5, h6,
+blockquote {
+    text-rendering: optimizeLegibility;
+}
+
+/*--------------------------------------------------------------------
+ * Basic Inline Typography
+ *------------------------------------------------------------------*/
+/* strong / bold */
+b, strong {
+    font-weight: 600;
+}
+
+/* italics / emphasis */
+i, em {
+    font-style: italic;
+}
+
+/* copyright and legal text */
+small {
+    font-size: $font_size_small;
+    line-height: 0.9em; // fixes line-height bug
+}
+
+/* small, upercase font */
+.smallcaps {
+    font-variant: small-caps; 
+}
+
+/* subscript and superscript */
+sup, sub {
+   vertical-align: baseline;
+   position: relative;
+   top: -0.4em;
+   font-size: $font_size_small;
+   line-height: 0.9em; // fixes line-height bug
+}
+
+sub {
+    top: 0.2em;
+}
+
+
+/*--------------------------------------------------------------------
+ * Code
+ *------------------------------------------------------------------*/
+code,
+kbd,
+samp {
+    background: $silver;
+    border-radius: 2px;
+    font-size: $font_size_small;
+    line-height: 0.9em; /* fixes line-height bug */
+    padding: 2px;
+    vertical-align: middle;
+}
+
+/* preformatted code blocks */
+pre {
+  margin-bottom: $base_line_height;
+  overflow: hidden;
+  white-space: pre;
+  code {
+    display: block;
+    padding: $indent_unit/2;
+    line-height: 1.2;
+  }
+}
+
+/*--------------------------------------------------------------------
+ * Span that keeps words together
+ *------------------------------------------------------------------*/
+.text-inline {
+  display: inline-block;
+  &.link--inline {
+    display: inline-block;
+  }
+  
+}
+
+.text-block {
+  display: block;
+}
+
+/*--------------------------------------------------------------------
+ * Dividers
+ *------------------------------------------------------------------*/
+
+hr {
+  border: 0;
+  border-bottom: 2px solid $inkling_orange;
+  padding-top: $spacing_unit_small;
+  margin: 0;
+  max-width: 100px;
+  border-radius: 1px;
+}
+
+hr + p {
+  padding-top: $spacing_unit_small;
+}
+
+.divider {
+  border: 0;
+  border-bottom: 1px solid $almost_white;
+  padding-top: 0;
+  margin: 0;
+  max-width: 100%;
+  border-radius: 0;
+}
+
+
+//--------------------------------------------------------------------
+// Paragraphs
+//--------------------------------------------------------------------
+
+p {
+    font-weight: 300;
+    
+  & + p {
+    padding-top: $spacing_unit_small;
+  }
+}
+
+
+//--------------------------------------------------------------------
+// Blockquote
+//--------------------------------------------------------------------
+
+blockquote {
+  p {
+    text-align: center;
+    line-height: 1.5;
+  }
+  &:before {
+    content: '“';
+    display: block;
+    font-size: $font_size1;
+    color: inherit;
+    top: 0;
+    left: 0;
+    font-weight: 600;
+    text-align: center;
+  }
+}
+
+cite {
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: $silver;
+  @include respond($bp_medium) {
+    font-size: $font_size7;
+  }
+
+}
+
+.blockquote--large p {
+  font-size: $font_size4;
+  @include respond($bp_medium) {
+    font-size: $font_size3;
+    line-height: 1.4;
+  }
+}
+
+.blockquote--medium p {
+  font-size: $font_size6;
+  @include respond($bp_medium) {
+    font-size: $font_size4;
+    line-height: 1.4;
+  }
+  
+}
+
+/*--------------------------------------------------------------------
+ * Forces breaks in long strings, most often used in unbroken strings 
+ * like http://url.com/that/goes/on/and/will/not/break/otherwise that 
+ * appear in table-cells where break-word does not work.
+ *------------------------------------------------------------------*/
+.force-break {
+  word-break: break-word;
+}
+
+/*--------------------------------------------------------------------
+ * Force Hyphen
+ * Use with `<span class="force-hyphen">Longunbrokenword</span>. 
+ * Forces breaks at mobile size, otherwise tries to add hyphens for 
+ * browsers that support it.
+ *------------------------------------------------------------------*/
+.force-hyphen {
+  word-break: break-all;
+  @include respond($bp_medium) {
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+  }
+}
+
+/*--------------------------------------------------------------------
+ * Text alignment
+ *------------------------------------------------------------------*/
+@mixin text-left { // For use in mixins
+  text-align: left !important;
+    h1, h2, h3, p {
+      text-align: left !important;
+    }
+}
+.text-left { // For use in markup
+  text-align: left !important;
+    h1, h2, h3, p {
+      text-align: left !important;
+      margin-left: 0 !important;
+    }
+}
+
+@mixin text-center { // For use in mixins
+  text-align: center !important;
+}
+
+.text-center { // For use in markup
+  text-align: center !important;
+}
+/*--------------------------------------------------------------------
+ * Alternate text color
+ *------------------------------------------------------------------*/
+.text {
+  &--warmblue {
+  color: $inkling_warmblue;
+  }
+  &--teal {
+  color: $inkling_teal;
+  }
+}
+
+// Text sizes
+
+.text {
+  &--medium {
+    font-size: $font_size6;
+    @include respond($bp_medium) {
+      font-size: $font_size4;
+    }
+  }
+  &--large {
+    font-size: $font_size6;
+    @include respond($bp_medium) {
+      font-size: $font_size2;
+    }
+  }
+}
+

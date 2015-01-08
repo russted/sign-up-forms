@@ -1,0 +1,287 @@
+//--------------------------------------------------------------------
+// Media Queries
+// Sass shorthand mixins for defining media queries.
+//--------------------------------------------------------------------
+// Respond shorthand, assumes min-width
+@mixin respond($value) {
+    @media (min-width: #{$value}) {
+        @content
+    }
+}
+
+// Responds to mobile devices, assumes max-width
+@mixin respond-mobile {
+    @media only screen and (max-width: ($bp_medium - 1)) {
+        @content;
+    }
+}
+
+// Responds to any specified max-width value in px.
+@mixin respond-max-width($max-width) {
+    @media only screen and (max-width: #{$max-width}) {
+        @content;
+    }
+}
+
+// Responds to any specified min-width value in px
+@mixin respond-min-width($min-width) {
+    @media only screen and (min-width: #{$min-width}) {
+        @content;
+    }
+}
+
+// Responds between two values in px
+@mixin respond-between($min-width, $max-width) {
+    @media screen and (min-width: #{$min-width}) and (max-width: #{$max-width}) {
+        @content;
+    }
+}
+
+//--------------------------------------------------------------------
+// Alignment
+//--------------------------------------------------------------------
+@mixin right {
+    float: right;
+    clear: right;
+    display: block;
+    margin-left:0;
+    margin-left: 3.1%;
+
+    // If a left-floating element is followed by a right-floating 
+    // element, collapse the margin;
+    .one-half.left + & {
+        margin-left: 0;
+    }
+}
+
+@mixin left {
+    float: left;
+    clear: left;
+    display: block;
+    margin-left: 0;
+    margin-right: 3.1%;
+
+    // If a right-floating element is followed by a left-floating 
+    // element, collapse the margin;
+    .one-half.right + & {
+        margin-right: 0;
+    }
+}
+
+@mixin center {
+  float: none;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin vertically-align {
+  position: relative;
+    top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+}
+
+//--------------------------------------------------------------------
+// Widths
+//
+// Each width class contains two widths.
+// The float-width is used for element widths outside of a grid element.
+// The grid-width is used when inside a grid element to compensate
+// for the larger sized container caused by the border-spacing.
+//--------------------------------------------------------------------
+
+@mixin grid-width($width) {
+    .grid & {
+        width: $width; 
+    }
+}
+
+@mixin float-width($width) {
+    width: $width;
+}
+
+// Whole
+// This class is only needed to reset a width. Widths should automatically 
+// be set to 100% by default.
+@mixin one-whole {
+    width: 100%; 
+    @include clearboth;
+}
+
+@mixin three-fourths {
+    @include float-width(73.5%);
+    @include grid-width(75%);
+}
+
+@mixin one-half {
+    @include float-width(48%); 
+    @include grid-width(50%);
+}
+
+@mixin two-thirds {
+    @include float-width(65%);
+    @include grid-width(66.66%);
+}
+
+@mixin one-third {
+    @include float-width(31%); 
+    @include grid-width(33.3%);
+}
+
+@mixin one-fourth {
+    @include float-width(22.5%);
+    @include grid-width(25%);
+}
+
+// On mobile devices, all fractional widths should span 100% of the body.
+@mixin width-full-mobile {
+    @include respond-max-width($bp_medium - 1) {
+        @include float-width(100%);
+        @include grid-width(100%);
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+
+
+//--------------------------------------------------------------------
+// Helpers (Hacks)
+//--------------------------------------------------------------------
+@mixin clearfix {
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin clearboth {
+    clear: both;
+}
+
+
+//--------------------------------------------------------------------
+// Vertically Align
+//--------------------------------------------------------------------
+
+
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+
+//--------------------------------------------------------------------
+// Aligns things to the bottom, the rock bottom
+//--------------------------------------------------------------------
+
+@mixin bottom-align {
+    margin-bottom: -$spacing_unit_small -9;
+  @include respond($bp_large) {
+    // padding-top: $spacing_unit_small*2.25;
+    margin-bottom: -$spacing_unit_medium - 9;
+  }
+  @include respond($bp_xxxlarge) {
+    margin-bottom: -$spacing_unit_large - 9;
+  }
+
+
+}
+
+//--------------------------------------------------------------------
+// Vendor Prefixing Functions
+//--------------------------------------------------------------------
+
+@function prefix($property, $prefixes: (webkit moz o ms)) {
+    $vendor-prefixed-properties: transform background-clip background-size;
+    $result: ();
+    @each $prefix in $prefixes {
+       @if index($vendor-prefixed-properties, $property) {
+         $property: -#{$prefix}-#{$property}
+       }
+       $result: append($result, $property);
+    }
+    @return $result;
+}
+ 
+@function trans-prefix($transition, $prefix: moz) {
+    $prefixed: ();
+    @each $trans in $transition {
+        $prop-name: nth($trans, 1);
+        $vendor-prop-name: prefix($prop-name, $prefix);
+        $prop-vals: nth($trans, 2);
+        $prefixed: append($prefixed, ($vendor-prop-name $prop-vals), comma);
+    }
+    
+    @return $prefixed;
+}
+
+//--------------------------------------------------------------------
+// Vendor Prefixing
+//--------------------------------------------------------------------
+@mixin prefix($name, $argument) {
+  -webkit-#{$name}: #{$argument};
+     -moz-#{$name}: #{$argument};
+      -ms-#{$name}: #{$argument};
+       -o-#{$name}: #{$argument};
+          #{$name}: #{$argument};
+}
+
+@mixin transition($values...) { 
+    $transitions: ();
+    @each $declaration in $values {
+        $prop: nth($declaration, 1);
+        $prop-opts: ();
+        $length: length($declaration);
+        @for $i from 2 through $length {
+            $prop-opts: append($prop-opts, nth($declaration, $i));   
+        }
+        $trans: ($prop, $prop-opts);
+        $transitions: append($transitions, $trans, comma);
+    }
+      
+    -webkit-transition: trans-prefix($transitions, webkit);
+    -moz-transition: trans-prefix($transitions, moz);
+    -o-transition: trans-prefix($transitions, o);
+    transition: $values;
+}
+
+@mixin backface-visibility($value) {
+    @include prefix(backface-visibility, $value);
+}
+
+@mixin filter($value) {
+    @include prefix(filter, $value);
+}
+
+@mixin transform($value) {
+    @include prefix(transform, $value);
+}
+
+@mixin transform-style($value) {
+    @include prefix(transform-style, $value);
+}
+
+@mixin transition($value) {
+    @include prefix(transition, $value);
+}
+
+@mixin perspective($value) {
+    @include prefix(perspective, $value);
+}
+
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+
+

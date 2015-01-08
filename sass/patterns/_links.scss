@@ -1,0 +1,96 @@
+//--------------------------------------------------------------------
+// Links
+//--------------------------------------------------------------------
+
+a {
+    
+}
+
+.link--inline {
+    position: relative;
+    display: inline;
+    outline: none;
+    text-decoration: none;
+    font-weight: 600;
+    color: $link_color;
+    cursor: pointer;
+    &:hover {
+        outline: none;
+    }
+    &:after {
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        width: 0%;
+        height: 1px;
+        content: '';
+        background: $link_color;
+        @include transition(width 0.3s ease);
+    }
+    &:hover:after {
+        width: 100%;
+    }
+    &:visited {
+        color: $link_color;
+    }
+
+}
+.link--inline.link--white {
+    &:after {
+      background: $white;  
+    }
+}
+
+.link--arrow {
+    color: $link_color;
+    text-decoration: none;
+    display: inline-block;
+    font-size: $font_size9;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    position: relative;
+    cursor: pointer;
+
+    &:after {
+        display: block;
+        content: "";
+        background: url(https://inklingstatic.a.ssl.fastly.net/inkling_com/ui/link-arrow.svg) no-repeat right;
+        background-size: 20px 15px;
+        height: 15px;
+        width: 20px;
+        position: absolute;
+        right: -30px;
+        top: 50%;
+        @include transform(translateY(-50%) translate3d( 0, 0, 0));
+        @include transition(all 0.3s ease);
+    }
+
+    &:hover {
+        &:after {
+            @include transform(translateY(-50%) translateX(10px) translate3d( 0, 0, 0));
+
+        }
+    }
+}
+
+.link--white {
+    color: $white;
+    &:visited {
+        color: $white;
+    }
+}
+
+.link--arrow.link--white {
+    &:after {
+        background: url(https://inklingstatic.a.ssl.fastly.net/inkling_com/ui/link-arrow-white.svg) no-repeat right;
+    }
+}
+
+p + .link--arrow {
+    margin-top: $spacing_unit_small/2;
+    @include respond($bp_medium) {
+        margin-top: $spacing_unit_small;
+    }
+    -webkit-font-smoothing: antialiased;
+}

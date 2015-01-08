@@ -1,0 +1,605 @@
+//--------------------------------------------------------------------
+// Shame
+//--------------------------------------------------------------------
+
+.twitter-share-button {
+    margin-top: $spacing_unit_small;
+}
+
+.social-share {
+    padding-top: $spacing_unit_small;
+    text-align: center;
+    @include center;
+}
+
+.calendar {
+    display: block;
+    @include clearfix;
+    + p, h2 {
+        padding-top: $spacing_unit_small;
+    }
+}
+
+.calendar-date {
+    width: $spacing_unit_large - 20;
+    margin-bottom: $spacing_unit_small;
+    border: 1px solid $white;
+    @include center;
+    @include respond($bp_medium) {
+        margin-bottom: 0;
+        width: $spacing_unit_large;
+        @include left;    
+    }
+    p {
+        text-align: center;
+        font-weight: 600;
+        font-size: $font_size9;
+        padding: $spacing_unit_small/4;
+    }
+    h2 {
+        border-top: 1px solid $white;
+        font-weight: 600;
+        text-align: center;
+        padding: $spacing_unit_small/4;
+    }
+}
+
+
+// li {
+//     list-style: none;
+//     padding: 11px 15px;
+//     margin-bottom: 20px;
+//     background: #eee;
+// }
+
+// @include respond ($bp_medium) {
+//     ul li {
+//         width: calc(50% - 10px);
+//     }
+// }
+// @include respond ($bp_large) {
+//     ul li {
+//         width: calc(33.33% - 10px);
+//     }
+// }
+// @include respond ($bp_xlarge) {
+//     ul li {
+//         width: calc(25% - 10px);
+//     }
+// }
+// @include respond ($bp_medium) {
+//     ul {
+
+//         display: flex;
+//         flex-wrap: wrap;
+//         justify-content: space-between;
+//     }
+// }
+
+
+// Quick Fix to make sure an image sits flush against the bottom block
+.mb-8 { 
+    margin-bottom: -8px;
+}
+
+.ml-250 {
+    @include respond($bp_xlarge){
+       margin-left: 200px; 
+    }
+    @include respond($bp_xxlarge){
+       margin-left: 250px; 
+    }
+    
+}
+
+// Gives a fixed width to headers and other cenetered elements that we want to control
+
+.width-540 {
+    @include respond($bp_medium){
+       max-width: 540px;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xxxlarge + 100){
+       max-width: 600px;
+    }
+}
+
+// Gives a percentage width to headers and other cenetered elements that we want to control the width of
+// Helps control where things fall
+
+.percent-50 {
+    @include respond($bp_medium){
+       max-width: 70%;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xlarge){
+       max-width: 50%;
+    }
+}
+
+.percent-60 {
+    @include respond($bp_medium){
+       max-width: 85%;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xlarge){
+       max-width: 60%;
+    }
+}
+
+.percent-70 {
+    @include respond($bp_medium){
+       max-width: 70%;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xxxlarge + 100){
+       max-width: 60%;
+    }
+}
+
+.percent-80 {
+    @include respond($bp_medium){
+       max-width: 80%;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xxxlarge + 100){
+       max-width: 70%;
+    }
+}
+
+.percent-90 {
+    @include respond($bp_medium){
+       max-width: 90%;
+       margin-left: auto;
+       margin-right: auto; 
+    }
+    @include respond($bp_xxxlarge + 100){
+       max-width: 80%;
+    }
+}
+
+
+// apply left and right padding to paragraphs not aligned left, and not in a card
+.grid {
+    p:not(.card-info):not(.card-title):not(.card-name) {
+        @include respond($bp_large) {
+            padding-right: $spacing_unit_small/2;
+            padding-left: $spacing_unit_small/2;
+        }
+    }
+
+    .text-left p:not(.card-info):not(.card-title):not(.card-name) {
+        @include respond($bp_large) {
+            padding-right: $spacing_unit_small/2;
+            padding-left: 0;
+        }
+    }
+}
+
+    .grid--left-align p:not(.card-info):not(.card-title):not(.card-name) {
+        @include respond($bp_large) {
+            padding-right: $spacing_unit_small/2;
+            padding-left: 0;
+        }
+    }
+
+  
+
+// /* Customer Success */
+
+.hero.customer-success {
+    background:url(../imgs/hero_customer-success.jpg) right no-repeat;
+    background-size:cover;
+    min-height: 465px;
+}
+
+.hero.customer-success h1 {
+    color:#167bb9;
+    margin-top:12%;
+}
+
+.hero.customer-success p.mobile {display:none;}
+
+.customer-success .intro {
+    max-width:780px;
+    margin:0 auto 60px;
+    text-align: center;
+}
+
+.customer-success .intro h1 {
+    font-size:45px;
+}
+
+.customer-grid {
+    position:relative;
+}
+
+.customer-4 {
+    position:relative;
+    margin-bottom:35px;
+}
+
+.customer {
+    cursor: pointer;
+    float:left;
+    width: calc(25% - 35px);
+    margin-right:35px;
+    height: 242px;
+    background:#eff0f0;
+    text-align: center;
+    line-height: 242px;
+    margin-bottom:24px;
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+
+.customer:hover {
+    background-color:#037db6;
+}
+
+.customer-hover {
+    padding-bottom:24px;
+    margin-bottom:0;
+    background:#037db6 url(../imgs/1_test-arrow.png) bottom no-repeat;
+}
+
+.customer img.logo {
+    vertical-align: middle;
+    max-width: 80%;
+    max-height:100px;
+}
+
+.customer img.logo.white {display:none;}
+.customer:hover img.logo.white,
+.customer-hover img.logo.white {display:inline;}
+.customer:hover img.logo.color,
+.customer-hover img.logo.color{display:none;}
+
+.story {
+    line-height: normal;
+    /*height:617px;*/
+    height:auto;
+    overflow: hidden;
+    position:absolute;
+    display:none;
+    left:0;
+    // top:266px;
+    margin:-2px 0 50px 0;
+    z-index: 20;
+    background:#fefefe url(../imgs/customer-success_story-bg.svg) top right no-repeat;
+    background-size:375px 924px;
+    text-align: left;
+    max-width:1140px;
+    -moz-box-shadow:    inset 0 0 0 2px #037db6, 0px 6px 10px 0px rgba(0,0,0,.3);
+    -webkit-box-shadow: inset 0 0 0 2px #037db6, 0px 6px 10px 0px rgba(0,0,0,.3);
+    box-shadow:         inset 0 0 0 2px #037db6, 0px 6px 10px 0px rgba(0,0,0,.3);
+    left: 50%; @include transform(translateX(-50%));
+    width: 100%;
+}
+
+.story.noquote {background:#fefefe;}
+
+.customer-hover > .story {
+    display:block;
+    height:auto;
+    margin-bottom:50px;
+}
+
+.story .description {
+    float:left;
+    width:50%;
+    margin-left:80px;
+    margin-bottom:40px;
+}
+
+.story.noquote .description {width:85%;}
+
+.story .description h2 {
+    font-size:45px;
+    color:#484748;
+    margin:40px 0 0;
+}
+
+.story .description h2 + hr {
+    width:70px;
+    margin-top:15px;
+    margin-left: 0;
+}
+
+.story .description p {
+    line-height: 1.5em;
+}
+
+.story .quote {
+    float:right;
+    width:22%;
+    margin-top:100px;
+    margin-right:35px;
+    margin-bottom:40px;
+    color:#fff;
+    font-size:20px;
+    font-weight: 600;
+    line-height: 34px;
+}
+
+@media (max-width: 1280px) {
+.customer img.logo {
+    
+}
+}
+
+@media (max-width: 1020px) {
+
+.customer {
+    line-height:150px;
+    height:150px;
+}
+.story {}
+.story .description {
+    margin-left:40px;
+    width:45%;
+}
+.story .quote {width:30%;}
+.story .description h2 {font-size:32px;}
+.story .description p {font-size:17px;}
+
+.hero.customer-success {
+    background:url(../imgs/hero_customer-success-mobile.svg) no-repeat;
+    background-size:cover;
+    min-height:0;
+    padding-bottom:40px;
+}
+.hero.customer-success p.mobile {
+    display:block;
+    color:#333;
+}
+
+.customer-success .intro {display:none;}
+}
+
+@media (max-width: 800px) {
+.customer-2 {
+    position:relative;
+    clear:both;
+}
+
+.customer {
+    width: calc(50% - 35px);
+    margin-right:35px;
+}
+
+.story {background-image:none;}
+
+.story .description {
+    float:none;
+    width: 100%;
+}
+
+.story .description h2 {
+    font-size:32px;
+}
+
+.story .quote {
+    float:none;
+    width:100%;
+    padding:100px 40px 30px;
+    background:url(../imgs/customer-success_story-bg-mobile.svg) top no-repeat;
+    background-size:cover;
+    margin:0 auto;
+}
+}
+
+
+.p-25 { // patterns that need 25px of spacing
+    padding: $spacing_unit_small;
+}
+
+
+/*--------------------------------------------------------------------
+ * Basic Swiper Styling
+ *------------------------------------------------------------------*/
+
+// Can move to animations partial
+
+@-webkit-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: scale(.9);
+    }   50% {
+        opacity: 1;
+        -webkit-transform: scale(1.05);
+    }
+    70% {
+        -webkit-transform: scale(.9);
+    }
+    100% {
+        -webkit-transform: scale(1);
+    }
+}
+
+@-moz-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -moz-transform: scale(.9);
+    }
+    50% {
+        opacity: 1;
+        -moz-transform: scale(1.05);
+    }
+    70% {
+        -moz-transform: scale(.9);
+    }
+    100% {
+        -moz-transform: scale(1);
+    }
+}
+
+@-o-keyframes bounceIn {
+    0% {
+        opacity: 0;
+        -o-transform: scale(.9);
+    }
+    50% {
+        opacity: 1;
+        -o-transform: scale(1.05);
+    }
+    70% {
+        -o-transform: scale(.9);
+    }
+    100% {
+        -o-transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(.9);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/*--------------------------------------------------------------------
+ * Awards Styling
+ *------------------------------------------------------------------*/
+
+.awards {
+    position: relative;
+    @include respond($bp_xlarge) {
+        margin: 0 auto;
+        width: 800px;
+    }
+}
+
+.awards-image--right {
+    position: absolute; // Gets rid of award image in mobile
+    top: -9999px;
+    right: -9999px;
+    @include respond($bp_large){ // brings the image back at 960
+        top: 0;
+        right: 0;
+        max-width: 205px;
+    }
+    @include respond($bp_xlarge){ 
+        right: 5%;
+        max-width: 300px;
+    }
+    @include respond($bp_xlarge + 100){
+        right: 0;
+
+    }
+}
+
+.awards-image--left { // literally duplicating code, no bueno
+    position: absolute;
+    top: -9999px;
+    right: -9999px;
+    @include respond($bp_large){ 
+        top: 0;
+        left: 0;
+        max-width: 205px;
+    }
+    @include respond($bp_xlarge){ 
+        left: 5%;
+        max-width: 300px;
+    }
+    @include respond($bp_xlarge + 100){
+        left: 0;
+
+    }
+
+
+}
+
+    .awards__text--right {
+        @include respond($bp_medium) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 375px;
+        }
+        @include respond($bp_large) {
+            float: right;
+        }
+        @include respond($bp_large) {
+        }
+    }
+
+    .awards__text--left {
+        @include respond($bp_medium) {
+            margin-left: auto;
+            margin-right: auto;
+            width: 375px;
+        }
+        @include respond($bp_large) {
+            width: 70%; 
+            margin-left: 0;
+        }
+    }
+
+.awards-info {
+    width: 200px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: $text_color;
+    margin: 0 auto;
+    padding-top: $spacing_unit_small;
+    margin-top: $spacing_unit_small;
+        @include respond($bp_medium) { 
+            display: inline-block;
+            padding-top: 0;
+            padding-left: $spacing_unit_small;
+            padding-top: 0;
+            margin-top: 0;
+            border-top-width: 0;
+            border-top-color: transparent;
+            border-left-style: solid;
+            border-left-width: 1px;
+            border-left-color: $text_color; 
+            margin-left: 0;  
+        }
+        @include respond($bp_xlarge) {
+        padding-left: $spacing_unit_small;
+        }
+    p {
+        font-weight: 600;
+        font-size: $font_size8;
+        line-height: $base_line_height_small;
+            @include respond($bp_medium) {
+                font-size: $font_size7;
+                line-height: 1.5;
+            }
+    }
+}
+
+.awards-logo { 
+    max-width: 150px;
+    @extend .center;
+    @include respond($bp_medium) {
+        @include left;
+        margin-right: $spacing_unit_small;
+        padding-top: $spacing_unit_small/2;
+    }
+    @include respond($bp_xlarge) {
+        margin-right: $spacing_unit_small;
+    }
+}
+
+
+/*--------------------------------------------------------------------
+ * VIDEO CAROUSEL
+ *------------------------------------------------------------------*/
+

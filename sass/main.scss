@@ -1,0 +1,119 @@
+/*--------------------------------------------------------------------
+ * Hemingway
+ *
+ * Please consider our style recommendations:
+ *
+ * 1. Every block of CSS should contain a comment explaining
+ *    its purpose.
+ *
+ * 2. Avoid using !important tags. Respect the cascade.
+ *
+ * 3. Use the least specific selector for the job (avoid
+ *    overqualifying).
+ *
+ *------------------------------------------------------------------*/
+
+//--------------------------------------------------------------------
+// Theme Settings
+//--------------------------------------------------------------------
+@import "_settings";
+
+//--------------------------------------------------------------------
+// Reset
+//--------------------------------------------------------------------
+
+// Reset browser defaults for consistency
+@import "core/reset";
+
+//--------------------------------------------------------------------
+// Mixins
+//--------------------------------------------------------------------
+
+// Mixins
+@import "core/mixins";
+
+
+//--------------------------------------------------------------------
+// Core
+//--------------------------------------------------------------------
+
+// Grid
+@import "patterns/grid";
+
+// Width, alignment, and grid styles
+@import "core/layout";
+
+// Animation
+@import "core/animation";
+
+
+//--------------------------------------------------------------------
+// Patterns
+//--------------------------------------------------------------------
+
+// Base
+@import "patterns/base";
+
+// Text
+@import "patterns/text";
+
+// Hero
+@import "patterns/hero";
+
+// Sections
+@import "patterns/block";
+
+// Form Fields
+//@import "patterns/forms";
+
+// Form Fields
+@import "patterns/mrkto-forms";
+
+// Headings
+@import "patterns/headings";
+
+// Links
+@import "patterns/links";
+
+// Links
+@import "patterns/lists";
+
+// Images and Figures
+@import "patterns/icons";
+
+// Images and Figures
+@import "patterns/images";
+
+// Header
+@import "patterns/header";
+
+// Footer
+@import "patterns/footer";
+
+// Sections
+@import "patterns/card";
+
+// Buttons
+@import "patterns/buttons";
+
+// Carousels
+@import "patterns/carousels";
+
+// Tooltips
+@import "patterns/tooltips";
+
+// User Documentation
+//@import "patterns/userdocs";
+
+// Resources
+//@import "patterns/resources";
+
+// Video
+@import "patterns/video";
+
+//--------------------------------------------------------------------
+// SHAME
+//--------------------------------------------------------------------
+
+@import "patterns/shame"; 
+

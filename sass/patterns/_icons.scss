@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------------
+ * Icons
+ * Icon Sizes for icon--small and icon--large
+ *------------------------------------------------------------------*/
+
+// .icon--large {
+//     width: 110px;
+//     height: 110px;
+
+// }
+
+.icon--medium {
+    width: 110px;
+    height: 110px;
+    + h3 {
+    	padding-top: $spacing_unit_small;
+    } 
+}
+
+.icon--small {
+    width: 75px;
+    height: 75px;
+}
+
+.icon--xsmall {
+    width: 60px;
+    height: 60px;
+}
+
+.icon--social {
+    width: 44px;
+    height: 44px;
+}
+
+.icon--circle {
+    border-radius: 100%;
+}

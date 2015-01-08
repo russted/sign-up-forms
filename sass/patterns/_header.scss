@@ -1,0 +1,28 @@
+//--------------------------------------------------------------------
+// Header
+//--------------------------------------------------------------------
+
+header {
+    width: 100%;
+    position: absolute;
+    color: $white;
+
+    .header__logo {
+        max-width: 90px;
+        @include center;
+    }
+
+    .container {
+        padding: $spacing_unit_small;
+    }
+    
+
+}
+
+header + section {
+    padding-top: $spacing_unit_medium;
+    @include respond($bp_xxlarge) {
+        padding-top: 0;
+    }
+}
+

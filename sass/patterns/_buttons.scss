@@ -1,0 +1,68 @@
+@mixin button-base() {
+    display: inline-block;
+    border-radius: $padding_width;
+    text-decoration: none;
+    padding: $padding_width/4 $padding_width;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: $base_font_size_small;
+    font-weight: 600;
+    text-align: center;
+    color: $white;
+    cursor: pointer;
+    min-width: 180px;
+}
+
+.btn {
+  @include button-base;
+  position: relative;
+  margin: 0 auto;
+  margin-top: $spacing_unit_small;
+  @include transition(background 0.3s ease);
+  
+  &.done:hover {
+    cursor: normal;
+  }
+  &:hover {
+    @include transition(background 0.3s ease);
+  }
+}
+
+
+
+.btn--orange{
+  background: $inkling_orange;
+  
+  &:hover {
+    background: tint($inkling_orange, 10%);
+  }
+}
+
+.btn--green{
+  background: $inkling_leafgreen;
+  &:hover {
+    background: tint($inkling_leafgreen, 10%);
+  }
+}
+.btn--outline {
+  border: 2px solid #fff;
+
+  &--image {
+    border: 2px solid #fff;
+    background: rgba(0, 0, 0, 0.4);
+      &:hover {
+        background: rgba(0, 0, 0, 0.6);
+        @include transition(background 0.3s ease);
+      }
+  }
+
+}
+.btn--outline--dark {
+  border: 2px solid $text_color;
+  color: $text_color;
+}
+
+.btn-center { // Is used when you wrap a div around a button to center it
+  @include center;
+  text-align: center;
+}

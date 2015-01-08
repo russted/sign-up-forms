@@ -1,0 +1,178 @@
+/*--------------------------------------------------------------------
+ * Hero 
+ * Used for all large messaging that appears at the top of webpages
+ * There are three types of hero styles:
+ * hero__basic: No images, no illustration, just text
+ * hero__illustration: text and illustration side by side
+ * hero__image: text sits on a background image
+ *------------------------------------------------------------------*/
+
+.hero {
+  width: 100%;
+  color: $white;
+}
+
+// Hero Illustration
+
+.hero__illustration {
+  h1, p {
+    @include text-left;
+    margin-left: 0;
+  }
+}
+
+.hero__image--illustration {
+  @include one-half;
+  @include right;
+  margin-left: 0;
+  @include respond($bp_xlarge){
+    position: relative;
+      top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  img {
+    position: absolute;
+    top: -9999px;
+    right: -9999px;
+    @include respond($bp_xlarge){
+      position: relative;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+// Hero Basic and Hero Illustration (helps vertically center text and illustrations in block)
+.hero__illustration {
+  .content {
+    @include respond($bp_large){
+      height: 325px; // needs a set height to vertically align
+    }
+  }
+  .hero__text {
+    width: 100%;  
+    @include respond($bp_large){
+        width: 80%;
+        position: relative;
+        top: 50%;
+      -webkit-transform: translateY(-50%);
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+      }
+    @include respond($bp_xlarge){
+        @include one-half;
+      }
+  }
+
+}
+
+// Hero Basic specific styles
+
+.hero__basic {
+  @include respond($bp_medium) {
+    @include text-center;
+  }
+  
+  .hero__text {
+    width: 100%;  
+    @include respond($bp_large){
+        width: 80%;
+      }
+    @include respond($bp_xlarge){
+        width: 65%;
+      }
+  }
+  .hero__text {
+    @include center;
+  }
+  .hero__rule {
+    @include center;
+  }
+  img {
+    margin-bottom: -8px;
+  }
+}
+
+// Hero Illustration specific styles
+
+.hero__illustration {
+  .hero__text {
+    @include left;
+  }
+}
+
+// Hero Image
+
+.hero__image {
+  @include center;
+
+  .content {
+    @include text-center;
+  }
+  .hero__rule {
+    @include center;
+  }
+  .hero__text {
+    width: 100%;
+    @include center;
+    @include respond($bp_medium) {
+      width:80%;
+    }
+    @include respond($bp_large){
+      width: 70%;
+    }
+    @include respond($bp_xlarge){
+      width: 58%;
+    }
+
+  }
+
+  img {
+    position: relative;
+    max-width: 500px;
+    margin-left: -10px;
+    padding-top: $spacing_unit_small;
+    margin-bottom: -$spacing_unit_small - 8;
+    @include respond($bp_medium) {
+      margin-bottom: -$spacing_unit_medium - 7;
+      margin-left: -31px;
+    }
+    @include respond($bp_medium) {
+      margin-bottom: -$spacing_unit_medium - 7;
+    }
+    @include respond($bp_xxlarge){
+        margin-bottom: -$spacing_unit_large - 7;
+      }
+  }
+
+}
+
+
+// Specific to each type of content 
+
+.hero__image--4-key-trends{ 
+  background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/hero-lp-4-key-trends.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.hero__image--people-process{ 
+  background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/hero-lp-sign-up-people-process-bg.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.hero__image--future-book{ 
+  background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/hero-lp-future-book.jpg') center center no-repeat;
+  background-size: cover;
+}
+
+.hero__image--5-must-ask{ 
+  background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/hero-lp-5-must-ask.jpg') center center no-repeat;
+  background-size: cover;
+}
+.hero__image--editors-guide{
+  background: url('https://inklingstatic.a.ssl.fastly.net/inkling_com/hero/hero-lp-editor.jpg') center center no-repeat;
+  background-size: cover; 
+}
+
