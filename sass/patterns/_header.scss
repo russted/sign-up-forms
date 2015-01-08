@@ -8,12 +8,24 @@ header {
     color: $white;
 
     .header__logo {
-        max-width: 90px;
-        @include center;
+        max-width: 120px;
+        
     }
 
     .container {
-        padding: $spacing_unit_small;
+        padding: $spacing_unit_small $spacing_unit_small;
+        @include respond($bp_medium){
+           padding: $spacing_unit_small $spacing_unit_medium; 
+        }
+
+        @include respond($bp_large){
+           padding: $spacing_unit_small $spacing_unit_medium; 
+        }
+
+        @include respond($bp_xxlarge){
+           padding: $spacing_unit_medium $spacing_unit_large; 
+        }
+        
     }
     
 

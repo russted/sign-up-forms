@@ -45,7 +45,7 @@ tr, tt, u, ul, var, video, :before, :after, div {
 .container {
   max-width: 1366px;
   margin: 0 auto;
-  padding: 25px; }
+  padding: 50px 25px; }
   @media (min-width: 568px) {
     .container {
       padding: 50px; } }
@@ -137,12 +137,12 @@ h1 + .grid, h3 + .grid, h2 + .grid, p + .grid {
   margin-left: 0; }
 
 @media (min-width: 568px) {
-  .padded, .grid--half, .grid--third, .grid--fourth {
-    padding: 0 12.5px; } }
+  .padded, .grid--third, .grid--fourth {
+    padding: 0 25px; } }
 @media (min-width: 568px) {
-  .padded .item, .grid--half .item, .grid--third .item, .grid--fourth .item {
-    margin-right: 12.5px;
-    margin-left: 12.5px; } }
+  .padded .item, .grid--third .item, .grid--fourth .item {
+    margin-right: 25px;
+    margin-left: 25px; } }
 
 .item {
   width: 100%; }
@@ -151,9 +151,12 @@ h1 + .grid, h3 + .grid, h2 + .grid, p + .grid {
       float: left; } }
 
 .grid--half .item:nth-child(1) {
-  margin-top: 25px; }
+  margin-top: 0; }
+  @media (min-width: 768px) {
+    .grid--half .item:nth-child(1) {
+      margin: 0px 10% 0px 0px; } }
 .grid--half .item:nth-child(2) {
-  margin-top: 25px; }
+  margin-top: 50px; }
 .grid--half .item:nth-child(3) {
   margin-top: 25px; }
 .grid--half .item:nth-child(4) {
@@ -228,7 +231,7 @@ h1 + .grid, h3 + .grid, h2 + .grid, p + .grid {
 
 .two-thirds {
   width: 100%; }
-  @media (min-width: 568px) {
+  @media (min-width: 768px) {
     .two-thirds {
       width: 66.6667%; } }
 
@@ -1246,6 +1249,15 @@ cite {
 .hero {
   width: 100%;
   color: #ffffff; }
+  .hero h1 {
+    text-align: left; }
+    @media (min-width: 868px) {
+      .hero h1 {
+        text-align: center;
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto; } }
 
 .hero__illustration h1, .hero__illustration p {
   text-align: left !important;
@@ -1470,10 +1482,6 @@ cite {
   width: 100%;
   max-width: 500px;
   margin-left: 0;
-  float: none;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
@@ -1990,6 +1998,20 @@ h2 + .list-bullet {
 .icon--circle {
   border-radius: 100%; }
 
+.social_share {
+  list-style: none;
+  margin-top: 25px; }
+  .social_share--icon {
+    position: relative;
+    float: left;
+    height: 40px;
+    width: 40px;
+    margin: 0px 7px; }
+    .social_share--icon a {
+      text-indent: -9999px; }
+    .social_share--icon:first-of-type {
+      margin-left: 0; }
+
 /*  Images should always span 100% if their container */
 img {
   width: 100%;
@@ -2207,13 +2229,18 @@ header {
   position: absolute;
   color: #ffffff; }
   header .header__logo {
-    max-width: 90px;
-    float: none;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; }
+    max-width: 120px; }
   header .container {
-    padding: 25px; }
+    padding: 25px 25px; }
+    @media (min-width: 568px) {
+      header .container {
+        padding: 25px 50px; } }
+    @media (min-width: 768px) {
+      header .container {
+        padding: 25px 50px; } }
+    @media (min-width: 1280px) {
+      header .container {
+        padding: 50px 100px; } }
 
 header + section {
   padding-top: 50px; }
@@ -3255,6 +3282,17 @@ h3 + .tooltip__image {
     width: 100%;
     height: 100%; }
 
+.speaker_content img {
+  width: 100%; }
+.speaker_content img + h2 {
+  border-top: 1px solid #474747;
+  margin-top: 25px;
+  padding-top: 25px; }
+
+.download_content img + p {
+  margin-top: 25px;
+  text-align: center; }
+
 .twitter-share-button {
   margin-top: 25px; }
 
@@ -3368,20 +3406,6 @@ h3 + .tooltip__image {
 @media (min-width: 1466px) {
   .percent-90 {
     max-width: 80%; } }
-
-@media (min-width: 768px) {
-  .grid p:not(.card-info):not(.card-title):not(.card-name) {
-    padding-right: 12.5px;
-    padding-left: 12.5px; } }
-@media (min-width: 768px) {
-  .grid .text-left p:not(.card-info):not(.card-title):not(.card-name) {
-    padding-right: 12.5px;
-    padding-left: 0; } }
-
-@media (min-width: 768px) {
-  .grid--left-align p:not(.card-info):not(.card-title):not(.card-name) {
-    padding-right: 12.5px;
-    padding-left: 0; } }
 
 .hero.customer-success {
   background: url(../imgs/hero_customer-success.jpg) right no-repeat;
@@ -3735,3 +3759,5 @@ h3 + .tooltip__image {
 /*--------------------------------------------------------------------
  * VIDEO CAROUSEL
  *------------------------------------------------------------------*/
+
+/*# sourceMappingURL=main.css.map */

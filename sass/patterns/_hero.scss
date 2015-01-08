@@ -10,6 +10,15 @@
 .hero {
   width: 100%;
   color: $white;
+
+  h1 {
+    text-align: left;
+
+    @include respond($bp_large + 100) {
+      text-align: center;
+      @include center;
+    }
+  }
 }
 
 // Hero Illustration

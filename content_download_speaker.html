@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/2000/REC-xhtml1-200000126/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SYSTEM INCLUDES - DO NOT EDIT -->
+    <?php echo $mContext['headElements']; ?>
+
+    <!-- START TEMPLATE CSS - EDIT THIS SECTION -->
+    <link rel="stylesheet" type="text/css" href="https://inklingfonts.a.ssl.fastly.net/fonts/2014-09-23T22:56/fonts.css">
+<!--     <link rel="stylesheet" type="text/css" media="screen" href="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/css/main.css" />
+ -->    
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <link rel="shortcut icon" href="https://inklingstatic.a.ssl.fastly.net/static_assets/20141031.192348z.3daa2c8f/images/favicon.ico" type="image/x-icon" />
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements. All other JS at the end of file. -->
+    <!--[if lt IE 9]>
+    <script src="http://yesler.com/eju/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Yesler position overrides (change name of element in landing page WYSIWYG to add these classnames) -->  
+    <style>
+      .posOverride {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+       <!--  float: left !important; -->
+        z-index: 1 !important;
+      }
+      .posOverrideRight {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+        float: right !important;
+        z-index: 1 !important;
+      }
+      .posOverrideFull {
+        position: relative !important;
+        top: auto !important;
+        left: auto !important;
+       <!--  float: left !important; -->
+        z-index: 1 !important;
+        width: 100% !important;
+      }
+    </style>
+    
+    <!-- END TEMPLATE CSS -->
+    <!-- STOP EDITING BY HERE. -->
+
+    <!-- SYSTEM JAVASCRIPT - DO NOT EDIT -->
+    <script type="text/javascript">
+      function fieldValidate(field) {
+        /* call Mkto.setError(field, message) and return false to mark a field value invalid */
+        /* return 'skip' to bypass the built-in validations */
+        return true;  
+      } 
+      function getRequiredFieldMessage(domElement, label) {
+        return "This field is required";
+      }
+      function getTelephoneInvalidMessage(domElement, label) {
+        return "Please enter a valid telephone number";
+      }
+      function getEmailInvalidMessage(domElement, label) {
+        return "Please enter a valid email address";
+      }
+    </script>
+  </head>
+  <body id="bodyId" <?php echo $mContext['bodyAttributes'] ?>
+    <div id="outerWrapDiv">
+      <div id="innerWrapDiv">
+        <!-- START TEMPLATE HTML - EDIT THIS SECTION -->
+        <div id="mktContent" class="mktEditable">
+          <!-- Base of Landing Page Content -->
+          <header>
+            <div class="container">
+              <div class="content">
+                <a href="https://inkling.com"><img class="header__logo" alt="Inkling" src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/inkling-logo-white.svg" /></a>
+              </div>
+            </div>
+          </header>
+          <section class="hero bg--teal" style="background: url('{{my.backgroundImage}}') center center; background-size: cover;">
+            <div class="container">
+              <div class="content">
+                <h1 class="two-thirds">People, Processes, Software: The Three Elements of Modern Publishing</h1>
+              </div>
+              <div class="content">
+                <div class="sign-up__form">
+                  <p class="form-title"><b>Register For The Webinar</b></p>
+                  <!-- THIS IS WHERE ALL YOUR DYNAMIC CONTENT COMES IN! -->
+                    <?php echo $mContext['bodyElements']; ?>
+                  <!-- THIS IS WHERE ALL YOUR DYNAMIC CONTENT STOP COMING IN! -->
+                </div>
+                <div class="sign-up__text">
+                  <div class="calendar">
+                    <div class="calendar-date">
+                      <p>JUN</p>
+                      <h2>25</h2>
+                    </div>
+                    <p class="calendar-info"><b>Webinar: People, Processes, Software: The Three Elements of Modern Publishing </b><br>Monday July 25, 2014 •  2 pm EDT </p>
+                  </div>  
+                  <p>Despite numerous attempts, most publishers still aren’t digital-first businesses. Meanwhile, the competition continues to lure away customers with free digital content. In this webinar, Inkling Founder and CEO, Matt MacInnis, and Kaplan Publishing President, Maureen McMahon, share their experience and insights into how to better align your people, products, and processes.</p>
+                  <ul class="social_share">
+                    <li class="social_share--icon"><a href="{{my.facebookShare}}"><img src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/images/ui/facebook.svg" alt="Facebook" height="45" width="45" /></a></li>
+                    <li class="social_share--icon"><a href="{{my.twitterShare}}"><img src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/images/ui/twitter.svg" alt="Twitter" height="45" width="45" /></a></li>
+                    <li class="social_share--icon"><a href="{{my.linkedinShare}}"><img src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/images/ui/linkedin.svg" alt="Linkedin" height="45" width="45" /></a></li>
+                    <li class="social_share--icon"><a href="{{my.emailShare}}"><img src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/images/ui/email.svg" alt="email" height="45" width="45" /></a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section class="block bg--white">
+            <div class="container">
+              <div class="content grid grid--half">
+                <div class="item">
+                  <h2 class="text-left">You’ll Learn How To:</h2>
+                  <ul class="list-bullet">
+                    <li>Design content workflows that can flex with any output</li>
+                    <li>Leverage your teams more effectively with cloud publishing tools that put people first</li>
+                    <li>Recognize the five key indicators of a healthy, people-centric content production workflow</li>
+                  </ul> 
+                </div>
+                <div class="item speaker_content">
+                  <img src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/images/nolan.png" width="100%" />
+                  <h2 class="text-left">About the speaker</h2>
+                  <p class="text-left">Nolan Myers is Inkling’s Director of Client Solutions. Nolan led Inkling’s content production from ten titles a year to hundreds per month. He and his team now help Inkling’s partners leverage its cloud publishing technologies and processes to build beautiful content.
+</p>
+                </div>
+              </div>
+            </div>
+          </section>
+          <footer>
+            <div class="contain group">
+              <div class="info">
+                <img src="https://inklingstatic.a.ssl.fastly.net/store_assets/img/inkling_logo-solid.svg" alt="Inkling" title="Inkling" width="100" height="42" class="logo">
+                <ul>
+                  <li><a href="https://www.inkling.com/terms/">Terms &amp; Conditions</a></li>
+                  <li><a href="https://www.inkling.com/privacy/">Privacy Policy</a></li>
+                  <li>Copyright 2014</li>
+                </ul>
+              </div>
+              <div class="sitemap desktop">
+                <ul>
+                  <li>Solutions</li>
+                  <li><a href="https://www.inkling.com/solutions/">Overview</a></li>
+                  <li><a href="https://www.inkling.com/publishing/">Publishing</a></li>
+                  <li><a href="https://www.inkling.com/sales-training/">Sales Training</a></li>
+                  <li><a href="https://www.inkling.com/employee-training/">Employee Training</a></li>
+                  <li><a href="https://www.inkling.com/research-and-reports/">Research &amp; Reports</a></li>
+                </ul>
+                <ul>
+                  <li>Resources</li>
+                  <li><a href="https://www.inkling.com/resources/">Overview</a></li>
+                  <li><a href="https://www.inkling.com/blog/">Blog</a></li>
+                  <li><a href="https://www.inkling.com/developers">Developers</a></li>
+                  <li><a href="https://www.inkling.com/customer-success/">Customer Success</a></li>
+                  <li><a href="https://www.inkling.com/support">Support</a></li>
+                </ul>
+                <ul>
+                  <li>Company</li>
+                  <li><a href="https://www.inkling.com/about/">About Us</a></li>
+                  <li><a href="https://www.inkling.com/press/">Press</a></li>
+                  <li><a href="https://www.inkling.com/careers/">Careers</a></li>
+                </ul>
+                <ul>
+                  <li>Follow Us</li>
+                  <li><a href="https://www.linkedin.com/company/inkling_2">LinkedIn</a></li>
+                  <li><a href="http://twitter.com/inkling">Twitter</a></li>
+                  <li><a href="http://www.facebook.com/pages/Inkling/377802230525">Facebook</a></li>
+                </ul>
+              </div>
+              <div class="sitemap mobile">
+                <div class="accordion-top-level">
+                  <a href="#" class="accordion-toggle-blog">Solutions</a>
+                </div>
+                <div style="display: none;" class="accordion-content">
+                  <div>
+                    <a href="https://www.inkling.com/solutions/">Overview</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/publishing/">Publishing</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/sales-training/">Sales Training</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/employee-training/">Employee Training</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/research-and-reports/">Research &amp; Reports</a>
+                  </div>
+                </div>
+                <div class="accordion-top-level">
+                  <a href="#" class="accordion-toggle-blog">Resources</a>
+                </div>
+                <div style="display: none;" class="accordion-content">
+                  <div>
+                    <a href="https://www.inkling.com/solutions/">Overview</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/blog/">Blog</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/developers">Developers</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/customer-success/">Customer Success</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/support">Support</a>
+                  </div>
+                </div>
+                <div class="accordion-top-level">
+                  <a href="#" class="accordion-toggle-blog">Company</a>
+                </div>
+                <div style="display: none;" class="accordion-content">
+                  <div>
+                    <a href="https://www.inkling.com/about/">About Us</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/press/">Press</a>
+                  </div>
+                  <div>
+                    <a href="https://www.inkling.com/careers/">Careers</a>
+                  </div>
+                </div>
+                <div class="accordion-top-level">
+                  <a href="#" class="accordion-toggle-blog">Follow Us</a>
+                </div>
+                <div style="display: none;" class="accordion-content">
+                  <div>
+                    <a href="https://www.linkedin.com/company/inkling_2">LinkedIn</a>
+                  </div>
+                  <div>
+                    <a href="http://twitter.com/inkling">Twitter</a>
+                  </div>
+                  <div>
+                    <a href="http://www.facebook.com/pages/Inkling/377802230525">Facebook</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </footer>     
+        </div><!-- /#mktContent -->
+        <!-- END TEMPLATE HTML -->
+
+      <!-- SYSTEM FOOTER - DO NOT EDIT -->
+      </div><!-- /#innerWrapDiv -->
+    </div><!-- /#outerWrapDiv -->
+    <?php echo $mContext['endElements']; ?>
+
+    <!-- Google Tag Manager -->
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-54ZZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-54ZZ');</script>
+    <!-- End Google Tag Manager -->
+      
+    <!-- Load JS here for greater good =============================-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://inklingstatic.a.ssl.fastly.net/inkling_com/landing_pages/sign_up/js/main-min.js"></script> 
+
+  </body>
+</html>

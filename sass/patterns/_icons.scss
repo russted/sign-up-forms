@@ -14,7 +14,7 @@
     height: 110px;
     + h3 {
     	padding-top: $spacing_unit_small;
-    } 
+    }
 }
 
 .icon--small {
@@ -34,4 +34,23 @@
 
 .icon--circle {
     border-radius: 100%;
+}
+
+.social_share {
+    list-style: none;
+    margin-top: 25px;
+    &--icon {
+        position: relative;
+        float: left;
+        height: 40px;
+        width: 40px;
+        margin: 0px 7px;
+        a {
+            text-indent: -9999px;
+        }
+
+        &:first-of-type {
+            margin-left: 0;
+        }
+    }
 }

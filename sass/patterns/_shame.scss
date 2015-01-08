@@ -1,6 +1,26 @@
 //--------------------------------------------------------------------
 // Shame
 //--------------------------------------------------------------------
+.speaker_content {
+    img {
+        width: 100%;
+    }
+
+    img + h2 {
+        border-top: 1px solid $coal;
+        margin-top: $spacing_unit_small;
+        padding-top: $spacing_unit_small;
+    }
+}
+
+.download_content {
+    img + p {
+        margin-top: $spacing_unit_small;
+        text-align: center;
+    }
+}
+
+
 
 .twitter-share-button {
     margin-top: $spacing_unit_small;
@@ -165,28 +185,28 @@
 
 
 // apply left and right padding to paragraphs not aligned left, and not in a card
-.grid {
-    p:not(.card-info):not(.card-title):not(.card-name) {
-        @include respond($bp_large) {
-            padding-right: $spacing_unit_small/2;
-            padding-left: $spacing_unit_small/2;
-        }
-    }
+// .grid {
+//     p:not(.card-info):not(.card-title):not(.card-name) {
+//         @include respond($bp_large) {
+//             padding-right: $spacing_unit_small/2;
+//             padding-left: $spacing_unit_small/2;
+//         }
+//     }
 
-    .text-left p:not(.card-info):not(.card-title):not(.card-name) {
-        @include respond($bp_large) {
-            padding-right: $spacing_unit_small/2;
-            padding-left: 0;
-        }
-    }
-}
+//     .text-left p:not(.card-info):not(.card-title):not(.card-name) {
+//         @include respond($bp_large) {
+//             padding-right: $spacing_unit_small/2;
+//             padding-left: 0;
+//         }
+//     }
+// }
 
-    .grid--left-align p:not(.card-info):not(.card-title):not(.card-name) {
-        @include respond($bp_large) {
-            padding-right: $spacing_unit_small/2;
-            padding-left: 0;
-        }
-    }
+//     .grid--left-align p:not(.card-info):not(.card-title):not(.card-name) {
+//         @include respond($bp_large) {
+//             padding-right: $spacing_unit_small/2;
+//             padding-left: 0;
+//         }
+//     }
 
   
 

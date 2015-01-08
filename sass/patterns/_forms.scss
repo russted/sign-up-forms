@@ -178,7 +178,6 @@ textarea {
   width: 100%;
   max-width: 500px;
   margin-left: 0;
-  @include center;
   @include prefix(border-radius, 4px);
   @include respond($bp_large + 100) {
     @include one-half;
@@ -198,7 +197,7 @@ textarea {
       }
   }
 
-  h2 {
+  .form-title {
     text-align: center;
     @include respond($bp_large + 100) {
         text-align: left;
