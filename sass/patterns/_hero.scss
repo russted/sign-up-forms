@@ -11,6 +11,31 @@
   width: 100%;
   color: $white;
 
+  p {
+    font-size: $font_size8;
+    line-height: $base_line_height_small;
+    font-weight: 400;
+      @include respond($bp_medium) {
+        font-size: $font_size6;
+        line-height: $base_line_height_small;
+      }
+  }
+
+
+
+  p.title, p.form-title {
+    font-size: 22px;
+    @include respond($bp_medium) {
+        font-size: 24px;
+      } 
+  }
+
+  .calendar-info span {
+    margin-top: 10px;
+    display: inline-block;
+    font-size: 22px;
+  }
+
   h1 {
     text-align: left;
 

@@ -33,7 +33,7 @@
 }
 .sign-up__text {
   width: 100%;
-  padding-top: $spacing_unit_small;
+  padding-top: $spacing_unit_medium;
   @include respond($bp_large + 100) {
     @include one-half;
     @include left;
@@ -122,6 +122,9 @@ font-weight: bold;
 }
 
 
+.mktoForm {
+  padding: 10px 0px !important;
+}
 
 .mktoForm .mktoFieldWrap {
   /* Remove float from form because we are controling the layout with the div around it*/

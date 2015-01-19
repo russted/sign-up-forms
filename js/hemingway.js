@@ -1,5 +1,10 @@
 $(document).ready(function() {
 	
+
+	
+
+    
+
 	// footer code 
 	var isMobile = false;
 	// var numberForCarousel = 3;

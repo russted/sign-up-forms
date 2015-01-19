@@ -31,7 +31,7 @@
 
 .two-thirds { 
     width: 100%;
-    @include respond($bp_large) {
+    @include respond($bp_large + 100) {
         width: percentage(2/3);
     }
 

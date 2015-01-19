@@ -55,8 +55,8 @@
     line-height: $base_line_height_small;
     text-align: center;
       @include respond($bp_medium) {
-        font-size: $font_size7;
-        line-height: 1.5;
+        font-size: $font_size6;
+        line-height: $base_line_height_small;
       }
   }
   h3 {
