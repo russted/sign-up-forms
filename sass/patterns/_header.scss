@@ -38,3 +38,17 @@ header + section {
     }
 }
 
+header + section.block--thankyou {
+    padding-top: $spacing_unit_medium;
+    
+    @include respond($bp_xxlarge) {
+        padding-top: $spacing_unit_medium + 25;
+    }
+
+    @include respond($bp_xxlarge) {
+        padding-top: $spacing_unit_large;
+    }
+}
+
+
+
